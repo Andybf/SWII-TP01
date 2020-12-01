@@ -1,0 +1,21 @@
+create database sw2tp01;
+
+use sw2tp01;
+
+create table author(
+	id int primary key IDENTITY(1,1),
+	name varchar(64),
+	email varchar(64),
+	gender char(1)
+);
+
+create table book(
+	id int primary key IDENTITY(1,1),
+	name varchar(64),
+	id_author int,
+	price varchar(64),
+	quantity char(1)
+	FOREIGN KEY (id_author) REFERENCES author(id)
+);
+
+select * from author;
